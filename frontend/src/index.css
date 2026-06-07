@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgb(226 232 240);
+  border-radius: 0.75rem;
+  background: rgb(248 250 252 / 0.8);
+  padding: 0.75rem 0.875rem;
+  color: rgb(30 41 59);
+  font-size: 0.875rem;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.input::placeholder {
+  color: rgb(148 163 184);
+}
+
+.input:focus {
+  border-color: rgb(165 180 252);
+  background: white;
+  box-shadow: 0 0 0 4px rgb(99 102 241 / 0.08);
+}
+
+.dark .input {
+  border-color: rgb(255 255 255 / 0.1);
+  background: rgb(255 255 255 / 0.035);
+  color: rgb(241 245 249);
+}
+
+.dark .input:focus {
+  border-color: rgb(99 102 241 / 0.55);
+  background: rgb(255 255 255 / 0.05);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgb(148 163 184 / 0.35);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgb(99 102 241);
+  animation: typing 900ms ease-in-out infinite;
+}
+
+@keyframes typing {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}

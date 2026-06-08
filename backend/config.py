@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     GOOGLE_GEMINI_API_KEY: str
     FRONTEND_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"
 
+    # this function tells that these are the types of connections that we need to address for connection, others will be ignored..
     @property
     def frontend_origins(self) -> list[str]:
         return [
